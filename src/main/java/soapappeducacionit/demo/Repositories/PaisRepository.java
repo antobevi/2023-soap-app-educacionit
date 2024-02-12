@@ -1,7 +1,8 @@
 package soapappeducacionit.demo.Repositories;
+package soapappeducacionit.demo.
 
 import jakarta.annotation.PostConstruct;
-import localhost._8081.ws.Pais;
+import target/generated-sources/jaxb/localhost/_8081/ws.Pais;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
