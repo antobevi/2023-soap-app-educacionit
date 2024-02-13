@@ -1,5 +1,6 @@
 package soapappeducacionit.demo.Endpoints;
 
+import localhost._8081.ws.ObtenerPaisRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;

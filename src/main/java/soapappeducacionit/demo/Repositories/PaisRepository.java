@@ -1,8 +1,8 @@
 package soapappeducacionit.demo.Repositories;
-package soapappeducacionit.demo.
 
 import jakarta.annotation.PostConstruct;
-import target/generated-sources/jaxb/localhost/_8081/ws.Pais;
+import localhost._8081.ws.Moneda;
+import localhost._8081.ws.Pais;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 
 @Component
 public class PaisRepository {
-    private static final Map<String, Pais> paises = new HashMap<String, Pais>(); // mas optimo ya que no nos interesa un orden
+    private static final Map<String, Pais> paises = new HashMap<>(); // mas optimo ya que no nos interesa un orden
 
     @PostConstruct // apenas arranca la aplicacion se cargan los datos en memoria, util para pruebas
     public void initData() {
