@@ -8,6 +8,7 @@ import org.springframework.util.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Component
 public class PaisRepository {
@@ -48,7 +49,8 @@ public class PaisRepository {
     public Pais findPais(String name) {
         Assert.notNull(name, "Country's name can not be empty.");
 
-        return paises.get(name.toLowerCase());
+        //return paises.get(name); de esta forma no encuentra ningun pais si no escribis exactamente igual el nombre
+        return paises.values().stream().filter(pais -> pais.getNombre().equalsIgnoreCase(name)).findFirst().get();
     }
 
 }
