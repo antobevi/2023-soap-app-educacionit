@@ -16,27 +16,28 @@ import static org.assertj.core.api.Assertions.assertThat;
 // Se recomienda poner un puerto random en los test para evitar posibles inconvenientes
 // con las configuraciones de los puertos
 
-@SpringBootTest(classes = DemoApplicationTests.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = DemoApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class DemoApplicationTests {
 	@LocalServerPort
 	private int port = 0; // se pone cualquier numero ya que despues se pisa
 	private Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
 	private String baseURL = "http://localhost:";
+
 	@BeforeEach
 	public void init() throws Exception {
 		marshaller.setPackagesToScan(ClassUtils.getPackageName(ObtenerPaisRequest.class));
 		marshaller.afterPropertiesSet();
 	}
-	/*
+
 	@Test
 	public void testSendAndReceive() {
 		WebServiceTemplate ws = new WebServiceTemplate(marshaller);
 		ObtenerPaisRequest request = new ObtenerPaisRequest();
 
-		request.setName("Argentina");
+		request.setName("argentina");
 
 		Assertions.assertNotNull(ws.marshalSendAndReceive(baseURL + port + "/ws", request));
 		//assertThat(ws.marshalSendAndReceive(baseURL + port + "/ws", request) != null);
 	}
-	*/
+
 }
